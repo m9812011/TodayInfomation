@@ -16,4 +16,16 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
     </style>
+
+    <style name="indexRadioButton">
+        <item name="android:layout_width">@dimen/dp_0</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:drawablePadding">@dimen/dp_2</item>
+        <item name="android:textColor">@drawable/selector_main_top_tab_shanghai_text_color</item>
+    </style>
+
+
 </resources>

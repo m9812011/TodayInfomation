@@ -12,7 +12,6 @@
         <activity
             android:name=".SplashActivity"
             android:theme="@style/FullScreen">
-            <!--隱式啟動-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
