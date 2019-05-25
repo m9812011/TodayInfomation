@@ -9,5 +9,5 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Retention(RUNTIME) //運行時 註解
 @Target(TYPE)      //類接口 註解
 public @interface ViewInject {
-    int mainlayout() default -1;
+    int mainLayoutId() default -1;
 }

@@ -11,26 +11,20 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ButterKnife.bind(this);
         ViewInject annotation = this.getClass().getAnnotation(ViewInject.class);
 
-//        if (annotation != null) {
-//            int mainLayoutId = annotation.mainlayout();
-//            if (annotation != null) {
-//                if (mainLayoutId > 0) {
-//                    setContentView(mainLayoutId);
-//                } else {
-//                    throw new RuntimeException("mainlayoutId < 0");
-//                }
-//            } else {
-//                throw new RuntimeException("mainlayoutId = null");
-//            }
-//        }
-        int mainLayoutId = R.layout.activity_main;
-        if (mainLayoutId > 0) {
-            setContentView(mainLayoutId);
-        } else {
-            throw new RuntimeException("mainLayoutId < 0");
+        if (annotation != null) {
+            int mainLayoutId = annotation.mainLayoutId();
+            if (annotation != null) {
+                if (mainLayoutId > 0) {
+                    setContentView(mainLayoutId);
+                    ButterKnife.bind(this);
+                } else {
+                    throw new RuntimeException("mainLayoutId < 0");
+                }
+            } else {
+                throw new RuntimeException("mainLayoutId = null");
+            }
         }
     }
 }

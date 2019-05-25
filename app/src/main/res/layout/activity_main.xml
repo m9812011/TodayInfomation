@@ -11,8 +11,7 @@
         android:layout_above="@id/fl_main_bottom">
 
         <android.support.design.widget.FloatingActionButton
-            android:onClick="onClick"
-            android:id="@+id/fac_main_home"
+            android:id="@+id/facMainHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|right"

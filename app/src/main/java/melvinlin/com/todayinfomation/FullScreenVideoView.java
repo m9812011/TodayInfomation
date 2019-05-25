@@ -31,9 +31,10 @@ public class FullScreenVideoView extends VideoView {
         //原本的有問題，不做
         //super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
-        //
+        //widthMeasureSpec 包含兩個主要的內容：1.測量模式  2.測量大小
         int width = getDefaultSize(0, widthMeasureSpec);
         int height = getDefaultSize(0, heightMeasureSpec);
+        //設定測量尺寸
         setMeasuredDimension(width, height);
     }
 }

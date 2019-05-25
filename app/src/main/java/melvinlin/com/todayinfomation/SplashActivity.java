@@ -27,7 +27,7 @@ public class SplashActivity extends AppCompatActivity {
         mTvTimer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //顯示啟動
+                //顯式啟動
                 startActivity(new Intent(SplashActivity.this, MainActivity.class));
             }
         });
