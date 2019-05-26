@@ -22,7 +22,7 @@ public class SplashActivity extends BaseActivity {
     @BindView(R.id.tv_splash_timer)
     TextView mTvTimer;
 
-    private CustomCountDownTimer timer;
+    private SplashTimerPresenter timerPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,24 +30,12 @@ public class SplashActivity extends BaseActivity {
 
         initListener();
         initVideo();
-        // 把初始化Timer及相關內容抽出到Presenter層中
-        initTimer();
+        initTimerPresenter();
     }
 
-    private void initTimer() {
-        timer = new CustomCountDownTimer(5, new CustomCountDownTimer.ICountDownHandler() {
-            @Override
-            public void onTicker(int time) {
-                mTvTimer.setText(time + "秒");
-            }
-
-            @Override
-            public void onFinish() {
-                mTvTimer.setText("跳過");
-            }
-        });
-
-        timer.start();
+    private void initTimerPresenter() {
+        timerPresenter = new SplashTimerPresenter(SplashActivity.this);
+        timerPresenter.initTimer();
     }
 
     private void initVideo() {
@@ -59,8 +47,6 @@ public class SplashActivity extends BaseActivity {
                 mp.start();
             }
         });
-
-
     }
 
     private void initListener() {
@@ -82,7 +68,11 @@ public class SplashActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        timer.cancel();
+        timerPresenter.cancel();
+    }
 
+
+    public void setTvTimer(String s) {
+        mTvTimer.setText(s);
     }
 }
