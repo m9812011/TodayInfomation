@@ -3,6 +3,7 @@ package melvinlin.com.todayinfomation;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,26 +14,39 @@ import java.io.File;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import melvinlin.com.todayinfomation.mvp.ISplashActivityContract;
+import melvinlin.com.todayinfomation.mvp.view.LifeCircleMvpActivity;
 
 @ViewInject(mainLayoutId = R.layout.activity_splash)
-public class SplashActivity extends BaseActivity {
+public class SplashActivity extends BaseActivity implements ISplashActivityContract.IView {
 
     @BindView(R.id.vv_play)
     FullScreenVideoView mVideoView;
     @BindView(R.id.tv_splash_timer)
     TextView mTvTimer;
 
-    private SplashTimerPresenter timerPresenter;
+    private ISplashActivityContract.IPresenter timerPresenter;
 
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//
+//        initTimerPresenter();
+//        initListener();
+//        initVideo();
+//    }
+
+    /**
+     * 模板方法 設計模式
+     */
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
+    public void afterBindView() {
+        initTimerPresenter();
         initListener();
         initVideo();
-        initTimerPresenter();
     }
 
+    //
     private void initTimerPresenter() {
         timerPresenter = new SplashTimerPresenter(SplashActivity.this);
         timerPresenter.initTimer();
@@ -66,13 +80,8 @@ public class SplashActivity extends BaseActivity {
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        timerPresenter.cancel();
-    }
-
-
     public void setTvTimer(String s) {
         mTvTimer.setText(s);
     }
+
 }

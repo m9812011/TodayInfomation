@@ -5,8 +5,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import butterknife.ButterKnife;
+import melvinlin.com.todayinfomation.mvp.view.LifeCircleMvpActivity;
 
-public class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends LifeCircleMvpActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -18,7 +19,8 @@ public class BaseActivity extends AppCompatActivity {
             if (annotation != null) {
                 if (mainLayoutId > 0) {
                     setContentView(mainLayoutId);
-                    ButterKnife.bind(this);
+                    bindView();
+                    afterBindView();
                 } else {
                     throw new RuntimeException("mainLayoutId < 0");
                 }
@@ -26,5 +28,12 @@ public class BaseActivity extends AppCompatActivity {
                 throw new RuntimeException("mainLayoutId = null");
             }
         }
+    }
+
+    public abstract void afterBindView();
+
+    // View 的依賴注入綁定
+    private void bindView() {
+        ButterKnife.bind(this);
     }
 }

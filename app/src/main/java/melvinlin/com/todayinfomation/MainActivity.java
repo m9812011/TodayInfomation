@@ -37,9 +37,17 @@ public class MainActivity extends BaseActivity {
 
     private boolean isChangeTopOrBottom;
 
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        changeAnimation(rg_main_bottom, rg_main_top);
+//    }
+
+    /**
+     * 模板方法 設計模式
+     */
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void afterBindView() {
         changeAnimation(rg_main_bottom, rg_main_top);
     }
 
