@@ -1,11 +1,7 @@
-package melvinlin.com.todayinfomation;
+package melvinlin.com.todayinfomation.splash;
 
 
-import android.util.Log;
-
-import melvinlin.com.todayinfomation.mvp.ISplashActivityContract;
 import melvinlin.com.todayinfomation.mvp.base.BaseMvpPresenter;
-import melvinlin.com.todayinfomation.mvp.IMvpView;
 
 public class SplashTimerPresenter extends BaseMvpPresenter<ISplashActivityContract.IView> implements ISplashActivityContract.IPresenter {
 

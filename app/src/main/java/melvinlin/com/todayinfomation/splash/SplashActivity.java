@@ -1,21 +1,18 @@
-package melvinlin.com.todayinfomation;
+package melvinlin.com.todayinfomation.splash;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.os.PersistableBundle;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.VideoView;
 
 import java.io.File;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import melvinlin.com.todayinfomation.mvp.ISplashActivityContract;
-import melvinlin.com.todayinfomation.mvp.view.LifeCircleMvpActivity;
+import melvinlin.com.todayinfomation.base.BaseActivity;
+import melvinlin.com.todayinfomation.main.MainActivity;
+import melvinlin.com.todayinfomation.R;
+import melvinlin.com.todayinfomation.base.ViewInject;
 
 @ViewInject(mainLayoutId = R.layout.activity_splash)
 public class SplashActivity extends BaseActivity implements ISplashActivityContract.IView {

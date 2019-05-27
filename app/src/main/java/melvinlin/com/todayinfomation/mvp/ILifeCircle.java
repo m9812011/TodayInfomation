@@ -24,7 +24,7 @@ public interface ILifeCircle {
     void onDestroy();
 
     //Fragment
-    void destroyView();
+    void onDestroyView();
 
     //Fragment
     void onViewDestroy();

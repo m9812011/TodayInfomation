@@ -1,4 +1,4 @@
-package melvinlin.com.todayinfomation;
+package melvinlin.com.todayinfomation.base;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;

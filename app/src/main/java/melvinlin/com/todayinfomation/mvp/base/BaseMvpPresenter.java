@@ -50,7 +50,7 @@ public abstract class BaseMvpPresenter<T extends IMvpView> extends LifeCircleMvp
     }
 
     @Override
-    public void destroyView() {
+    public void onDestroyView() {
 
     }
 

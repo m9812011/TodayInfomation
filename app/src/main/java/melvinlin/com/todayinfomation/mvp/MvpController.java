@@ -97,11 +97,11 @@ public class MvpController implements ILifeCircle {
     }
 
     @Override
-    public void destroyView() {
+    public void onDestroyView() {
         Iterator var1 = this.lifeCircles.iterator();
         while (var1.hasNext()) {
             ILifeCircle presenter = (ILifeCircle) var1.next();
-            presenter.destroyView();
+            presenter.onDestroyView();
         }
     }
 

@@ -1,4 +1,8 @@
-package melvinlin.com.todayinfomation.mvp;
+package melvinlin.com.todayinfomation.splash;
+
+import melvinlin.com.todayinfomation.mvp.ILifeCircle;
+import melvinlin.com.todayinfomation.mvp.IMvpView;
+import melvinlin.com.todayinfomation.mvp.MvpController;
 
 public interface ISplashActivityContract {
 

@@ -1,4 +1,4 @@
-package melvinlin.com.todayinfomation;
+package melvinlin.com.todayinfomation.splash;
 
 
 import android.os.Handler;
