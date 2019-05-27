@@ -1,4 +1,4 @@
-package melvinlin.com.todayinfomation;
+package melvinlin.com.todayinfomation.splash;
 
 
 import android.os.Handler;
@@ -13,8 +13,8 @@ public class CustomCountDownTimer implements Runnable {
 
     private int time;
     private int countDowntime;
-    private final ICountDownHandler countDownHandler;
-    private final Handler handler;
+    private ICountDownHandler countDownHandler;
+    private Handler handler;
     private boolean isRun;
 
 
